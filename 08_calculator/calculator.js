@@ -8,24 +8,12 @@ const subtract = function(value_x, value_y) {
 };
 
 //Param is array
-const sum = function(arr) {
-
-  let sumToReturn = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sumToReturn = sumToReturn + arr[i];   
-  }
-  return sumToReturn;
-  
+const sum = (arr) => {
+  return arr.reduce( (acc,curr) => acc+=curr ,0);
 };
+  
 const multiply = function(arr) {
-  if(arr === undefined) {
-    return;
-  }
-  let numToReturn = 1 ;
-  for (let i = 0; i < arr.length; i++) {
-    numToReturn = numToReturn * arr[i];   
-  }
-  return numToReturn;
+  return arr.reduce( (acc,curr) => acc*=curr ,1);
 };
 
 
@@ -41,7 +29,7 @@ const factorial = function(num) {
     return factorialToReturn
   }
   do {
-    factorialToReturn = factorialToReturn * num--; 
+    factorialToReturn *= num--; 
   }while (0 < num);
   return factorialToReturn;
 };
